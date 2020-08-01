@@ -1,0 +1,22 @@
+# Hugo
+.hugo_build.lock
+public/
+resources/
+assets/jsconfig.json
+
+# OS Files
+## Linux
+.directory
+.bash_history
+
+## MacOS X
+.DS_Store
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Other
+.vscode/

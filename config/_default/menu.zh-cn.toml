@@ -1,0 +1,41 @@
+# Menu config
+# 菜单配置
+
+[[main]]
+  identifier = "posts"
+  # you can add extra information before the name (HTML format is supported), such as icons
+  # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+  pre = ""
+  # you can add extra information after the name (HTML format is supported), such as icons
+  # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+  post = ""
+  name = "文章"
+  url = "/posts/"
+  # title will be shown when you hover on this menu link.
+  # 将鼠标悬停在此菜单链接上时将显示标题。
+  title = ""
+  weight = 1
+[[main]]
+  identifier = "tags"
+  pre = ""
+  post = ""
+  name = "标签"
+  url = "/tags/"
+  title = ""
+  weight = 2
+[[main]]
+  identifier = "series"
+  pre = ""
+  post = ""
+  name = "系列"
+  url = "/series/"
+  title = ""
+  weight = 3
+[[main]]
+  identifier = "navigation"
+  pre = "<svg class='icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 496 512'><path d='M225.4 233.4c-12.5 12.5-12.5 32.8 0 45.3 12.5 12.5 32.8 12.5 45.3 0 12.5-12.5 12.5-32.8 0-45.3-12.5-12.5-32.8-12.5-45.3 0zM248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm126.1 148.1L308.2 300.4a31.9 31.9 0 0 1 -15.8 15.8l-144.3 66c-16.7 7.6-33.8-9.6-26.2-26.2l66-144.4a31.9 31.9 0 0 1 15.8-15.8l144.3-66c16.7-7.6 33.8 9.6 26.2 26.2z'/></svg>"
+  post = ""
+  name = "导航"
+  url = "https://nav.senzyo.net/"
+  title = ""
+  weight = 4

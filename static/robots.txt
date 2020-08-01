@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /
+Allow: /20*
+Allow: /images/Preview.png
+Allow: /index.html
+Allow: /favicon.svg
+Allow: /favicon.ico
+Allow: /sitemap.xml
+
+Sitemap: https://senzyo.net/sitemap.xml
