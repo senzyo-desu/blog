@@ -10,6 +10,10 @@ featuredImagePreview: ""
 summary: 本文不使用 Clash Verge 等 GUI 客户端, 而是通过任务计划程序或 Windows 服务和 Dashboard 网页来控制 Clash Meta Core (mihomo)。
 ---
 
+{{< admonition type=info title="注意" open=true >}}
+此文仅适用于客户端, 不适用于服务器和路由器。
+{{< /admonition >}}
+
 {{< admonition type=tip title="改名" open=true >}}
 `Clash Meta` 改名为 `mihomo`。
 {{< /admonition >}}
@@ -38,8 +42,8 @@ find-process-mode: always
 external-controller: 127.0.0.1:9090
 secret: AjIuQAZf795UQ16V3si6
 external-ui: ui
-external-ui-url: 'https://mirror.ghproxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip'
-# external-ui-url: 'https://mirror.ghproxy.com/https://github.com/MetaCubeX/Yacd-meta/archive/refs/heads/gh-pages.zip'
+external-ui-url: 'https://ghp.ci/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip'
+# external-ui-url: 'https://ghp.ci/https://github.com/MetaCubeX/Yacd-meta/archive/refs/heads/gh-pages.zip'
 profile:
   store-selected: true
   store-fake-ip: true
@@ -52,38 +56,38 @@ geo-auto-update: true
 # 单位为小时
 geo-update-interval: 24
 geox-url:
-  geoip: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/geoip.dat'
-  geosite: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/geosite.dat'
+  geoip: 'https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/geoip.dat'
+  geosite: 'https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/release/geosite.dat'
 global-ua: clash.meta
 
 dns:
   enable: true
   prefer-h3: false
+  use-hosts: true
+  respect-rules: false
   listen: 0.0.0.0:10053
   ipv6: true
   # 可选值 fake-ip / redir-host
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
-  fake-ip-filter: ['*.lan', 'stun.*.*.*', 'stun.*.*', time.windows.com, time.nist.gov, time.apple.com, time.asia.apple.com, '*.ntp.org.cn', '*.openwrt.pool.ntp.org', time1.cloud.tencent.com, time.ustc.edu.cn, pool.ntp.org, ntp.ubuntu.com, ntp.aliyun.com, ntp1.aliyun.com, ntp2.aliyun.com, ntp3.aliyun.com, ntp4.aliyun.com, ntp5.aliyun.com, ntp6.aliyun.com, ntp7.aliyun.com, time1.aliyun.com, time2.aliyun.com, time3.aliyun.com, time4.aliyun.com, time5.aliyun.com, time6.aliyun.com, time7.aliyun.com, '*.time.edu.cn', time1.apple.com, time2.apple.com, time3.apple.com, time4.apple.com, time5.apple.com, time6.apple.com, time7.apple.com, time1.google.com, time2.google.com, time3.google.com, time4.google.com, music.163.com, '*.music.163.com', '*.126.net', musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, '*.kuwo.cn', api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, '*.y.qq.com', streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, '*.xiami.com', '*.music.migu.cn', music.migu.cn, '*.msftconnecttest.com', '*.msftncsi.com', localhost.ptlogin2.qq.com, '*.*.*.srv.nintendo.net', '*.*.stun.playstation.net', 'xbox.*.*.microsoft.com', '*.ipv6.microsoft.com', '*.*.xboxlive.com', speedtest.cros.wr.pvp.net]
+  fake-ip-filter: ['*.lan', 'stun.*.*.*', 'stun.*.*', time.windows.com, time.nist.gov, time.apple.com, time.asia.apple.com, '*.ntp.org.cn', '*.openwrt.pool.ntp.org', time1.cloud.tencent.com, time.ustc.edu.cn, pool.ntp.org, ntp.ubuntu.com, ntp.aliyun.com, ntp1.aliyun.com, ntp2.aliyun.com, ntp3.aliyun.com, ntp4.aliyun.com, ntp5.aliyun.com, ntp6.aliyun.com, ntp7.aliyun.com, time1.aliyun.com, time2.aliyun.com, time3.aliyun.com, time4.aliyun.com, time5.aliyun.com, time6.aliyun.com, time7.aliyun.com, '*.time.edu.cn', time1.apple.com, time2.apple.com, time3.apple.com, time4.apple.com, time5.apple.com, time6.apple.com, time7.apple.com, time1.google.com, time2.google.com, time3.google.com, time4.google.com, music.163.com, '*.music.163.com', '*.126.net', musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, '*.kuwo.cn', api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, '*.y.qq.com', streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, '*.xiami.com', '*.music.migu.cn', music.migu.cn, '*.msftconnecttest.com', '*.msftncsi.com', localhost.ptlogin2.qq.com, '*.*.*.srv.nintendo.net', '*.*.stun.playstation.net', 'xbox.*.*.microsoft.com', '*.ipv6.microsoft.com', '*.*.xboxlive.com', speedtest.cros.wr.pvp.net, ssh.github.com, altssh.gitlab.com]
   # 更多 DNS 参考: https://senzyo.net/2022-22/
   default-nameserver:
-    - 'tls://223.5.5.5'
+    - 'udp://223.6.6.6'
   nameserver-policy:
   # 为 proxy-provider 使用的域名指定 DNS 服务器, 不然无法下载订阅文件
-    '+.pronetwork.top,+.wd-turbo.com': ['https://dns.alidns.com/dns-query', 'tls://dns.alidns.com']
-    'geosite:geolocation-!cn': ['https://dns.google/dns-query#🚀 默认出站', 'tls://dns.google#🚀 默认出站']
-    'geosite:cn': ['https://dns.alidns.com/dns-query', 'tls://dns.alidns.com']
+    '+.pronetwork.top,+.wd-turbo.com': ['https://dns.alidns.com/dns-query']
+    'geosite:geolocation-!cn': ['https://dns.google/dns-query#🚀 默认出站']
+    'geosite:cn': ['https://dns.alidns.com/dns-query']
   nameserver:
     - 'https://dns.google/dns-query#🚀 默认出站'
-    - 'tls://dns.google#🚀 默认出站'
   proxy-server-nameserver:
     - 'https://dns.alidns.com/dns-query'
-    - 'tls://dns.alidns.com'
 
 sniffer:
   enable: false
   force-dns-mapping: true
-  parse-pure-ip: true
+  parse-pure-ip: false
   override-destination: false
 
 mixed-port: 7890
@@ -195,6 +199,8 @@ proxy-groups:
     <<: *select1
   - name: '✈️ Telegram'
     <<: *select1
+  - name: '🖥️ SSH'
+    <<: *select1
   - name: '🇭🇰 香港节点'
     filter: '🇭🇰|香港|HK|Hong Kong'
     <<: *urltest
@@ -220,6 +226,9 @@ rules:
   # https://github.com/MetaCubeX/meta-rules-dat?tab=readme-ov-file#geositedatgeositedb-内容
   - GEOSITE,private,DIRECT
   - GEOIP,private,DIRECT,no-resolve
+  - PROCESS-NAME,ssh,🖥️ SSH
+  - PROCESS-NAME,ssh.exe,🖥️ SSH
+  - PROCESS-NAME,ssh-agent.exe,🖥️ SSH
   - GEOSITE,category-ads-all,📢 广告
   - DOMAIN-SUFFIX,copymanga.site,🚀 默认出站
   - DOMAIN-SUFFIX,mangafuna.xyz,🚀 默认出站
@@ -267,26 +276,18 @@ proxy-providers:
       expected-status: 204
     override:
       udp: true
-      up: '50 Mbps'
-      down: '100 Mbps'
+      up: '45 Mbps'
+      down: '90 Mbps'
 
 rule-providers:
   downloader:
     type: http
-    url: 'https://mirror.ghproxy.com/https://raw.githubusercontent.com/senzyo/as-gist/master/Rule/Clash/downloader.yaml'
+    url: 'https://ghp.ci/https://raw.githubusercontent.com/senzyo/as-gist/master/Rule/Clash/downloader.yaml'
     path: ./rule-providers/downloader.yaml
     # 单位为秒
     interval: 86400
     behavior: classical
     format: yaml
-
-ntp:
-  enable: true
-  write-to-system: false
-  server: ntp.aliyun.com
-  port: 123
-  # 单位为分钟
-  interval: 30
 ```
 
 ## Dashboard
@@ -508,7 +509,7 @@ foreach ($Url in $AssetUrls) {
 Stop-Process -Name $process -Force > $null 2>&1
 Clear-DnsClientCache
 Expand-Archive -LiteralPath "$WindowsBackupPath\$FileName" -DestinationPath "$ClashWorkPath" -Force
-Set-Location -Path $$ClashWorkPath
+Set-Location -Path $ClashWorkPath
 Rename-Item -Path "mihomo-windows-amd64.exe" -NewName "mihomo.exe"
 Start-ScheduledTask -TaskName $task
 Start-Sleep -Seconds 3

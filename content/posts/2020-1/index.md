@@ -253,13 +253,13 @@ alias proxy-unset="unset http_proxy https_proxy && echo -e 'Proxy environment va
 通过设置 `function` 来简化操作。将以下命令写入 [环境变量配置文件](../2021-6/) 中。
 
 ```bash
-function proxy-set() {
+function proxy-set {
     export http_proxy=http://127.0.0.1:7890
     export https_proxy=http://127.0.0.1:7890
     echo -e "Proxy environment variable has been \e[1;32mset\e[0m."
 }
 
-function proxy-unset() {
+function proxy-unset {
     unset http_proxy https_proxy
     echo -e "Proxy environment variable has been \e[1;31munset\e[0m."
 }

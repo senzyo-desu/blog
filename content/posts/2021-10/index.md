@@ -10,60 +10,34 @@ summary: Debian 系 Linux 和 Windows 中, NodeJS, NPM 与 Yarn 的安装与配�
 
 ## Install NodeJS
 
-### Debian
+### Linux
 
-1. 安装必要组件: 
+#### Use nvm
 
-   ```bash
-   sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
-   ```
+https://github.com/nvm-sh/nvm?tab=readme-ov-file#git-install
 
-2. 添加GPG: 
+如果无法稳定快速地访问 GitHub, 使用文件 `https://raw.hellogithub.com/hosts` 修改系统 hosts: 
 
-   ```bash
-   curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-   ```
+- Windows: `C:\Windows\System32\drivers\etc\hosts`
+- Linux: `/etc/hosts`
 
-3. 设置Node.js版本: 
+#### Build from Source Code
 
-   ```bash
-   NODE_MAJOR=20
-   ```
-
-4. 设置Node.js源: 
-
-   ```bash
-   echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-   ```
-
-5. 安装Node.js: 
-
-   ```bash
-   sudo apt-get update && sudo apt-get install nodejs -y
-   ```
-
-6. 检查版本: 
-
-   ```shell
-   node --version
-   npm --version
-   ```
+https://github.com/nodesource/distributions
 
 ### Windows
 
-最新尝鲜版: [https://nodejs.org/en/download/current](https://nodejs.org/en/download/current)
+预构建安装程序: https://nodejs.org/zh-cn/download/prebuilt-installer/current
 
-长期维护版: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+预构建二进制文件 (压缩包): https://nodejs.org/zh-cn/download/prebuilt-binaries/current
 
-所有版本: [https://nodejs.org/dist/](https://nodejs.org/dist/)
-
-习惯使用`zip`而不是`msi`方式安装Node.js。
+所有版本: https://nodejs.org/dist/
 
 ## NPM
 
 ### Install
 
-npm包含在Node.js的msi或者zip中, 不必单独安装。
+npm 已被包含在 Node.js 中, 不必单独安装。
 
 ### Config
 
@@ -72,12 +46,12 @@ npm包含在Node.js的msi或者zip中, 不必单独安装。
 对于Windows:
 
 1. Node.js文件夹路径: `D:\NodeJS`。
-2. 创建文件夹`D:\NodeJS\node_cache`和`D:\NodeJS\node_global`。
-3. **环境变量**→**系统变量**→**PATH**中, 新建`D:\NodeJS`, `D:\NodeJS\node_cache`和`D:\NodeJS\node_global`。
+2. 创建文件夹 `D:\NodeJS\node_cache` 和 `D:\NodeJS\node_global`。
+3. **环境变量** → **系统变量** → **PATH** 中, 新建 `D:\NodeJS`, `D:\NodeJS\node_cache` 和 `D:\NodeJS\node_global`。
 
 #### Cache & Global
 
-检查npm的缓存路径和全局安装路径: 
+检查 npm 的缓存路径和全局安装路径: 
 
 ```shell
 npm config get cache
@@ -134,19 +108,19 @@ yarn --version
    sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
    ```
 
-2. 添加GPG: 
+2. 添加 GPG: 
 
    ```bash
    curl -fsSL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/yarn.gpg
    ```
 
-3. 设置Yarn源: 
+3. 设置 Yarn 源: 
 
    ```bash
    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/yarn.gpg] https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
    ```
 
-4. 安装Yarn: 
+4. 安装 Yarn: 
 
    ```bash
    sudo apt-get update && sudo apt-get install -y yarn
@@ -162,14 +136,14 @@ yarn --version
 
 #### Environment Variable
 
-对于Windows:
+对于 Windows:
 
-1. 创建文件夹`D:\NodeJS\yarn_cache`和`D:\NodeJS\yarn_global`。
-2. **环境变量**→**系统变量**→**PATH**中, 新建`D:\NodeJS\yarn_cache`和`D:\NodeJS\yarn_global`。
+1. 创建文件夹 `D:\NodeJS\yarn_cache` 和 `D:\NodeJS\yarn_global`。
+2. **环境变量** → **系统变量** → **PATH** 中, 新建 `D:\NodeJS\yarn_cache` 和 `D:\NodeJS\yarn_global`。
 
 #### Cache & Global
 
-检查yarn的缓存路径和全局安装路径: 
+检查 yarn 的缓存路径和全局安装路径: 
 
 ```shell
 yarn config get cache-folder

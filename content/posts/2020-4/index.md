@@ -266,7 +266,7 @@ sudo reboot
 为防止以后误删该图标, 也可将图标放入`/usr/share/pixmaps/`文件夹下 (第三方图标都默认存放在这里), 然后在`Icon=`后接图片名称即可, 不用加文件后缀, 比如现在有文件`/usr/share/pixmaps/PicGo.png`, 在软件的`.desktop`文件写入`Icon=PicGo`即可。
 {{< /admonition >}}
 
-##  字体
+## 字体
 
 1. 提前在Windows中将需要的字体从`C:/Windows/Fonts`中复制出来, 放到`C:/Users/<UserName>/Fonts`中。
 2. 使用文件管理器(比如Dolphin)挂载Windows系统盘, 这时Windows系统盘根路径一般为`/run/media/<UserName>/Windows/`。
@@ -284,3 +284,48 @@ sudo reboot
    ```
 
 5. 更多字体设置参考 [字体](../2023-4/#字体)。
+
+## BBR
+
+查看系统现在的拥塞控制算法: 
+
+```bash
+sysctl net.ipv4.tcp_congestion_control
+```
+
+查看系统可用的拥塞控制算法: 
+
+```bash
+sysctl net.ipv4.tcp_available_congestion_control
+```
+
+如果没有 `bbr`, 检查 BBR 的内核模块是否已加载: 
+
+```bash
+lsmod | grep bbr
+```
+
+手动加载 BBR 的内核模块: 
+
+```bash
+sudo modprobe tcp_bbr
+```
+
+编辑 `/etc/sysctl.conf` 或者 `/etc/sysctl.d/99-sysctl.conf`, 添加: 
+
+```
+net.ipv4.tcp_congestion_control = bbr
+```
+
+还可以顺便改一下队列管理算法, 添加: 
+
+```
+net.core.default_qdisc = cake
+```
+
+重启系统后, 检查: 
+
+```bash
+sysctl net.ipv4.tcp_congestion_control
+sysctl net.core.default_qdisc
+```

@@ -26,9 +26,9 @@ keywords = ["senzyo"]
 # 搜索配置
 [search]
   enable = true
-  # type of search engine ("algolia", "fuse")
-  # 搜索引擎的类型 ("algolia", "fuse")
-  type = "algolia"
+  # type of search engine ("algolia", "fuse", "pagefind")
+  # 搜索引擎的类型 ("algolia", "fuse", "pagefind")
+  type = "pagefind"
   # max index length of the chunked content
   # 文章内容最长索引长度
   contentLength = 4000
@@ -37,7 +37,7 @@ keywords = ["senzyo"]
   placeholder = ""
   # max number of results length
   # 最大结果数目
-  maxResultLength = 15
+  maxResultLength = 10
   # snippet length of the result
   # 结果内容片段长度
   snippetLength = 50
@@ -48,9 +48,9 @@ keywords = ["senzyo"]
   # 是否在搜索索引中使用基于 baseURL 的绝对路径
   absoluteURL = false
   [search.algolia]
-    index = "index"
-    appID = "EQKXDMZYXP"
-    searchKey = "b22c863a909182b4bf665eb4159f177b"
+    index = "crawler_Github-senzyo-blog-refs-heads-master_index"
+    appID = "NBORTY71N5"
+    searchKey = "78087bb119a36ec2ed8a7d522d81a092"
   [search.fuse]
     # https://www.fusejs.io/api/options.html
     isCaseSensitive = false
@@ -65,6 +65,13 @@ keywords = ["senzyo"]
     ignoreLocation = true
     useExtendedSearch = false
     ignoreFieldNorm = false
+  [search.pagefind]
+    # https://pagefind.app/docs/search-config/#available-options
+    # run `npx pagefind --site $YOUR_PUBLIC_DIR` after site build to create pagefind index
+    termFrequency = 1.0
+    pageLength = 0.75
+    termSimilarity = 1.0
+    termSaturation = 1.4
 # Home page config
 # 主页信息设置
 [home]

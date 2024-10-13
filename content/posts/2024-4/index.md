@@ -41,7 +41,7 @@ user_pref("network.proxy.type", 1);
 将自定义的 `function` 写入 [环境变量配置文件](../2021-6/) 中: 
 
 ```bash
-function ff-proxy-on() {
+function ff-proxy-on {
     cat <<EOF >"/home/<UserName>/.mozilla/firefox/xxx/user.js"
 user_pref("network.proxy.backup.ssl", "127.0.0.1");
 user_pref("network.proxy.backup.ssl_port", 7890);
@@ -58,7 +58,7 @@ EOF
     echo -e "Firefox Proxy \e[1;32menabled\e[0m. Restart Firefox to apply."
 }
 
-function ff-proxy-off() {
+function ff-proxy-off {
     echo 'user_pref("network.proxy.type", 0);' >"/home/<UserName>/.mozilla/firefox/xxx/user.js"
     echo -e "Firefox Proxy \e[1;31mdisabled\e[0m. Restart Firefox to apply."
 }

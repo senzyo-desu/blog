@@ -72,7 +72,22 @@ Control Sequence Introducer (CSI) 在ANSI转义序列中用两字符序列`ESC [
 在 [环境变量配置文件](../2021-6/) 中添加: 
 
 ```bash
-export PS1='\n\[\e[1;37m\t \e[1;31m\u\e[1;37m@\e[1;31m\h \e[1;36m$PWD\e[1;31m\]\n\$ \[\e[0m\]'
+PS1='\n'
+PS1+='\[\e[1;37m\]'
+PS1+='\t '
+PS1+='\[\e[1;31m\]'
+PS1+='\u'
+PS1+='\[\e[1;37m\]'
+PS1+='@'
+PS1+='\[\e[1;31m\]'
+PS1+='\h '
+PS1+='\[\e[1;36m\]'
+PS1+='$PWD'
+PS1+='\n'
+PS1+='\[\e[1;31m\]'
+PS1+='\$ '
+PS1+='\[\e[0m\]'
+export PS1
 ```
 
 ### 解释
@@ -80,7 +95,7 @@ export PS1='\n\[\e[1;37m\t \e[1;31m\u\e[1;37m@\e[1;31m\h \e[1;36m$PWD\e[1;31m\]\
 - `\n`表示换行。
 - `\[`和`\]`这两个转义字符通知bash, 被括起来的字符不占用命令行上的任何空间, 这样就使自动换行能够继续正常工作。如果没有这两个转义字符, 当用户键入的命令到达终端的最右端时, 或者查看历史命令时, 就会出现显示错乱的情况。
 - `\e[1;37m`即SGR转义序列`ESC [ parameters m`, 定义后续字符的颜色, 这里是加粗的白色。
-- `\t`以HH:MM:SS格式显示24小时制时间。
+- `\t`以`HH:MM:SS`格式显示24小时制时间。
 - `\u`显示当前用户名。
 - `\h`显示当前host机器名称。
 - `$PWD`显示完整路径。
@@ -106,59 +121,53 @@ root用户:
 对于`Git for Windows Setup`, 修改`C:\Program Files\Git\etc\profile.d\git-prompt.sh`; 对于`Git for Windows Portable`, 修改`PortableGit\etc\profile.d\git-prompt.sh`, 参考使用以下内容: 
 
 ```bash
-if test -f /etc/profile.d/git-sdk.sh
-then
+if test -f /etc/profile.d/git-sdk.sh; then
     TITLEPREFIX=SDK-${MSYSTEM#MINGW}
 else
     TITLEPREFIX=$MSYSTEM
 fi
 
-if test -f ~/.config/git/git-prompt.sh
-then
+if test -f ~/.config/git/git-prompt.sh; then
     . ~/.config/git/git-prompt.sh
 else
-    PS1='\[\e]0;$TITLEPREFIX:$PWD\007\]'    # set window title
-    PS1="$PS1"'\n'                          # new line
-    PS1="$PS1"'\[\e[1;37m\]'                # change to white
-    PS1="$PS1"'\t '                         # show time
-    PS1="$PS1"'\[\e[1;31m\]'                # change to red
-    PS1="$PS1"'\u'                          # show user
-    PS1="$PS1"'\[\e[1;37m\]'                # change to white
-    PS1="$PS1"'@'                           # show @
-    PS1="$PS1"'\[\e[1;31m\]'                # change to red
-    PS1="$PS1"'\h '                         # show host<space>
-    PS1="$PS1"'\[\e[1;36m\]'                # change to cyan
-    PS1="$PS1"'$PWD'                        # current working directory
-    if test -z "$WINELOADERNOEXEC"
-    then
+    PS1='\[\e]0;$TITLEPREFIX:$PWD\007\]' # set window title
+    PS1+='\n'
+    PS1+='\[\e[1;37m\]'
+    PS1+='\t '
+    PS1+='\[\e[1;31m\]'
+    PS1+='\u'
+    PS1+='\[\e[1;37m\]'
+    PS1+='@'
+    PS1+='\[\e[1;31m\]'
+    PS1+='\h '
+    PS1+='\[\e[1;36m\]'
+    PS1+='$PWD'
+    if test -z "$WINELOADERNOEXEC"; then
         GIT_EXEC_PATH="$(git --exec-path 2>/dev/null)"
         COMPLETION_PATH="${GIT_EXEC_PATH%/libexec/git-core}"
         COMPLETION_PATH="${COMPLETION_PATH%/lib/git-core}"
         COMPLETION_PATH="$COMPLETION_PATH/share/git/completion"
-        if test -f "$COMPLETION_PATH/git-prompt.sh"
-        then
+        if test -f "$COMPLETION_PATH/git-prompt.sh"; then
             . "$COMPLETION_PATH/git-completion.bash"
             . "$COMPLETION_PATH/git-prompt.sh"
-            PS1="$PS1"'\[\e[1;36m\]'  # change color to cyan
-            PS1="$PS1"'`__git_ps1`'   # bash function
+            PS1+='\[\e[1;36m\]' # change color to cyan
+            PS1+='`__git_ps1`'  # bash function
         fi
     fi
-    PS1="$PS1"'\n'              # new line
-    PS1="$PS1"'\[\e[1;31m\]'    # change to red
-    PS1="$PS1"'$'               # prompt: always $
-    PS1="$PS1"'\[\e[0m\]'       # change color to unset
+    PS1+='\n'
+    PS1+='\[\e[1;31m\]'
+    PS1+='$ '
+    PS1+='\[\e[0m\]'
 fi
 
-MSYS2_PS1="$PS1"                # for detection by MSYS2 SDK's bash.basrc
+MSYS2_PS1="$PS1" # for detection by MSYS2 SDK's bash.basrc
 
 # Evaluate all user-specific Bash completion scripts (if any)
-if test -z "$WINELOADERNOEXEC"
-then
-    for c in "$HOME"/bash_completion.d/*.bash
-    do
+if test -z "$WINELOADERNOEXEC"; then
+    for c in "$HOME"/bash_completion.d/*.bash; do
         # Handle absence of any scripts (or the folder) gracefully
         test ! -f "$c" ||
-        . "$c"
+            . "$c"
     done
 fi
 ```

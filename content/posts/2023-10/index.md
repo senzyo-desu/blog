@@ -10,6 +10,10 @@ featuredImagePreview: ""
 summary: 本文不使用 Clash Verge 等 GUI 客户端, 而是通过 systemd 服务和 Dashboard 网页来控制 Clash Meta Core (mihomo)。
 ---
 
+{{< admonition type=info title="注意" open=true >}}
+此文仅适用于客户端, 不适用于服务器和路由器。
+{{< /admonition >}}
+
 {{< admonition type=tip title="改名" open=true >}}
 `Clash Meta` 改名为 `mihomo`。
 {{< /admonition >}}
@@ -90,17 +94,17 @@ Chrome 会跟随 KDE 系统代理, Firefox 则不然。对于 KDE 系统代理�
 
 ### 当前配置重启
 
-参考 [开关系统和浏览器代理](../2024-2/#开关系统和浏览器代理), 将以下代码追加到 `/etc/proxy-custom` 中: 
+参考 [开关系统和浏览器代理](../2024-2/#开关系统和浏览器代理), 将以下代码添加到 `/etc/proxy-custom` 中: 
 
 ```bash
-function mihomo-restart() {
+function mihomo-restart {
     dir_config="/etc/mihomo"
     service="mihomo.service"
     sudo systemctl restart $service
     sleep 3
     sub_state=$(systemctl show -p SubState --value $service)
-    echo -e "$service state: ${yellow}$sub_state${reset}."
     if [ $sub_state == "running" ]; then
+        echo -e "$service state: ${green}$sub_state${reset}."
         secret=$(grep secret $dir_config/config.yaml | cut -d ' ' -f 2)
         controller_api=$(grep external-controller $dir_config/config.yaml | cut -d ' ' -f 2)
         response=$(curl -s -H "Authorization: Bearer ${secret}" -H "Content-Type: application/json" -X GET "http://${controller_api}/configs")
@@ -117,7 +121,7 @@ function mihomo-restart() {
             # ff-proxy-on
         fi
     else
-        echo -e "Run $service ${red}failed${reset}."
+        echo -e "$service state: ${red}$sub_state${reset}."
     fi
 }
 ```
@@ -127,12 +131,12 @@ function mihomo-restart() {
 将以下代码追加到 `/etc/proxy-custom` 中: 
 
 ```bash
-function mihomo-stop() {
+function mihomo-stop {
     service="mihomo.service"
     sudo systemctl stop $service
     sleep 1
     sub_state=$(systemctl show -p SubState --value $service)
-    echo -e "$service state: ${yellow}$sub_state${reset}."
+    echo -e "$service state: ${red}$sub_state${reset}."
 }
 ```
 
@@ -141,22 +145,22 @@ function mihomo-stop() {
 将以下代码追加到 `/etc/proxy-custom` 中: 
 
 ```bash
-function mihomo-switch() {
+function mihomo-switch {
     dir_config="/etc/mihomo"
     service="mihomo.service"
     sub_state=$(systemctl show -p SubState --value $service)
-    echo -e "$service state: ${yellow}$sub_state${reset}."
     if [ $sub_state != "running" ]; then
+        echo -e "$service state: ${red}$sub_state${reset}."
         sudo systemctl restart $service
         sleep 3
         sub_state=$(systemctl show -p SubState --value $service)
-        echo -e "$service state: ${yellow}$sub_state${reset}."
         if [ $sub_state != "running" ]; then
-            echo -e "Run $service ${red}failed${reset}."
+            echo -e "$service state: ${red}$sub_state${reset}."
             exit 1
         fi
     fi
     if [ $sub_state == "running" ]; then
+        echo -e "$service state: ${green}$sub_state${reset}."
         secret=$(grep secret $dir_config/config.yaml | cut -d ' ' -f 2)
         controller_api=$(grep external-controller $dir_config/config.yaml | cut -d ' ' -f 2)
         response=$(curl -s -H "Authorization: Bearer ${secret}" -H "Content-Type: application/json" -X GET "http://${controller_api}/configs")

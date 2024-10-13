@@ -138,8 +138,8 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\BitLocker
 - [Vim](https://www.vim.org/download.php)
 - [VLC](https://www.videolan.org/vlc/), 顺便一提 Android 版本在 [Play Store](https://play.google.com/store/apps/details?id=org.videolan.vlc) 停止更新, 但在其自托管的 Git [仓库](https://code.videolan.org/videolan/vlc-android/-/artifacts) 中持续更新
 - [Windows 11 Classic Context Menu](https://www.sordum.org/14479/windows-11-classic-context-menu-v1-1/), 让 Windows 11 使用 Windows 10 样式的右键菜单
-- [Windows Defender Control](https://www.sordum.org/9480/defender-control-v2-1/), 启用和禁用 Windows Defender
 - [Windows Update Blocker](https://www.sordum.org/9470/windows-update-blocker-v1-8/), 启用和禁用 Windows 更新
+- [Windows Defender Remover](https://github.com/ionuttbara/windows-defender-remover/releases/latest), 禁用或移除 Windows Defender 等安全组件
 - [WizTree](https://diskanalyzer.com/download), 分析磁盘文件大小
 - [阿里云盘](https://www.aliyundrive.com/)
 - [百度网盘](https://pan.baidu.com/download)

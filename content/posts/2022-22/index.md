@@ -194,7 +194,7 @@ DNS servers with custom filtering that protects your device from malware.
 | DNS, IPv6      | `2620:119:35::35` and `2620:119:53::53`                       |
 | DNSCrypt, IPv4 | Provider: `2.dnscrypt-cert.opendns.com` IP: `208.67.220.220`  |
 | DNSCrypt, IPv6 | Provider: `2.dnscrypt-cert.opendns.com` IP: `[2620:0:ccc::2]` |
-| DNS-over-HTTPS | `https://doh.opendns.com/dns-query`                           |
+| DNS-over-HTTPS | `https://dns.opendns.com/dns-query`                           |
 | DNS-over-TLS   | `tls://dns.opendns.com`                                       |
 
 #### FamilyShield
@@ -205,7 +205,7 @@ OpenDNS servers that provide adult content blocking.
 | -------------- | ------------------------------------------------------------ |
 | DNS, IPv4      | `208.67.222.123` and `208.67.220.123`                        |
 | DNSCrypt, IPv4 | Provider: `2.dnscrypt-cert.opendns.com` IP: `208.67.220.123` |
-| DNS-over-HTTPS | `https://doh.familyshield.opendns.com/dns-query`             |
+| DNS-over-HTTPS | `https://familyshield.opendns.com/dns-query`             |
 | DNS-over-TLS   | `tls://familyshield.opendns.com`                             |
 
 #### Sandbox
@@ -216,7 +216,7 @@ Non-filtering OpenDNS servers.
 | -------------- | ------------------------------------------- |
 | DNS, IPv4      | `208.67.222.2` and `208.67.220.2`           |
 | DNS, IPv6      | `2620:0:ccc::2` IP: `2620:0:ccd::2`         |
-| DNS-over-HTTPS | `https://doh.sandbox.opendns.com/dns-query` |
+| DNS-over-HTTPS | `https://sandbox.opendns.com/dns-query` |
 | DNS-over-TLS   | `tls://sandbox.opendns.com`                 |
 
 :::info

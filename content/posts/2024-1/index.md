@@ -12,6 +12,10 @@ toc:
   enable: false
 ---
 
+{{< admonition type=info title="注意" open=true >}}
+此文仅适用于客户端, 不适用于服务器和路由器。
+{{< /admonition >}}
+
 由于: 
 
 - sing-box 不像 clash 那样支持 `proxy-providers`。

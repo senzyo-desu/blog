@@ -10,6 +10,10 @@ featuredImagePreview: ""
 summary: 开机自动更新 `config.json` 并启动 sing-box。通过任务计划程序和 Dashboard 网页来控制 sing-box。
 ---
 
+{{< admonition type=info title="注意" open=true >}}
+此文仅适用于客户端, 不适用于服务器和路由器。
+{{< /admonition >}}
+
 参考上篇 [sing-box on Linux](../2024-2/) 中的思路, 通过任务计划程序 `sing-box-trigger` 来开机自启动脚本 `Update.ps1`, 这个脚本将脚本循环检测网络可用性, 当网络可用时, 从远端下载配置文件替换本地的配置文件, 然后启动任务计划程序 `sing-box`。
 
 ## Core

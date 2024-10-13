@@ -31,12 +31,12 @@ https://github.com/heiher/natmap/issues/18#issue-1580804352
 
 ## UDP Only
 
-| Primary address        | Primary port | Alternate port | Notes      |
-| ---------------------- | ------------ | -------------- | ---------- |
-| stun.miwifi.com        | 3478         |                |            |
-| stun.chat.bilibili.com | 3478         |                |            |
-| stun.cloudflare.com    | 3478         | 53             |            |
-| stun.qq.com            | 3478         |                | Unavaiable |
+| Primary address        | Primary port | Alternate port | Notes       |
+| ---------------------- | ------------ | -------------- | ----------- |
+| stun.miwifi.com        | 3478         |                |             |
+| stun.chat.bilibili.com | 3478         |                |             |
+| stun.cloudflare.com    | 3478         | 53             |             |
+| stun.qq.com            | 3478         |                | Unavailable |
 
 {{< admonition type=example title="更多" open=true >}}
 更多 STUN server 参见 https://gist.github.com/mondain/b0ec1cf5f60ae726202e#file-public-stun-list-txt

@@ -7,11 +7,9 @@ on:
       - master
 
 jobs:
-  update_algolia_index:
-    name: Update Algolia Index
+  algolia_recrawl:
+    name: Algolia Recrawl
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,10 +26,13 @@ jobs:
       - name: Build
         run: hugo --gc --minify
 
-      - name: Update Algolia Index
-        uses: tilburgsciencehub/algolia-uploader@v1
+      - name: Algolia crawler creation and recrawl
+        uses: algolia/algoliasearch-crawler-github-actions@v1
+        id: crawler_push
         with:
-          app_id: EQKXDMZYXP
-          admin_key: ${{ secrets.ALGOLIA_ADMIN_KEY }}
-          index_name: index
-          index_file_path: ./public/index.json
+          crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
+          crawler-api-key: ${{ secrets.CRAWLER_API_KEY }}
+          algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
+          algolia-api-key: ${{ secrets.ALGOLIA_API_KEY }}
+          site-url: 'https://senzyo.net/'
+          override-config: true
