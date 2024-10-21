@@ -226,9 +226,9 @@ rules:
   # https://github.com/MetaCubeX/meta-rules-dat?tab=readme-ov-file#geositedatgeositedb-内容
   - GEOSITE,private,DIRECT
   - GEOIP,private,DIRECT,no-resolve
-  - PROCESS-NAME,ssh,🖥️ SSH
-  - PROCESS-NAME,ssh.exe,🖥️ SSH
-  - PROCESS-NAME,ssh-agent.exe,🖥️ SSH
+  - SUB-RULE,(PROCESS-NAME,ssh),ssh
+  - SUB-RULE,(PROCESS-NAME,ssh.exe),ssh
+  - SUB-RULE,(PROCESS-NAME,ssh-agent.exe),ssh
   - GEOSITE,category-ads-all,📢 广告
   - DOMAIN-SUFFIX,copymanga.site,🚀 默认出站
   - DOMAIN-SUFFIX,mangafuna.xyz,🚀 默认出站
@@ -256,6 +256,10 @@ sub-rules:
     - GEOSITE,cn,DIRECT
     - GEOIP,cn,DIRECT,no-resolve
     - MATCH,📥 Downloader
+  ssh:
+    - GEOSITE,cn,DIRECT
+    - GEOIP,cn,DIRECT,no-resolve
+    - MATCH,🖥️ SSH
 
 proxy-providers:
   Provider1:
