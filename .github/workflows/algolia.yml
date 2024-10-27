@@ -11,21 +11,6 @@ jobs:
     name: Algolia Recrawl
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: true
-          fetch-depth: 0
-
-      - name: Setup Hugo
-        run: |
-          version=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | grep tag_name | cut -d "\"" -f4 | sed 's/v//')
-          curl -fsSLo hugo.deb "https://github.com/gohugoio/hugo/releases/download/v${version}/hugo_extended_${version}_linux-amd64.deb"
-          sudo dpkg -i hugo.deb
-
-      - name: Build
-        run: hugo --gc --minify
-
       - name: Algolia crawler creation and recrawl
         uses: algolia/algoliasearch-crawler-github-actions@v1
         id: crawler_push
