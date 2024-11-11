@@ -29,7 +29,7 @@ toc:
 1. Fork [sing-box-subscribe](https://github.com/Toperlock/sing-box-subscribe)。
 2. 默认的 `up_mbps` 和 `down_mbps` 可能不适合自己的网络, 建议自行对带宽测速后, 更改 [hysteria.py](https://github.com/Toperlock/sing-box-subscribe/blob/main/parsers/hysteria.py) 和 [hysteria2.py](https://github.com/Toperlock/sing-box-subscribe/blob/main/parsers/hysteria2.py) 中的这两个值。
 3. 在 [Vercel](https://vercel.com/new) 部署 `sing-box-subscribe`。
-4. 创建用于存放自定义模板的 GitHub 仓库, 比如 [sing-box-templates](https://github.com/senzyo/sing-box-templates)。
+4. 创建用于存放自定义模板的 GitHub 仓库, 比如 [sing-box-templates](https://github.com/senzyo-desu/sing-box-templates)。
 5. 拼接出最终的 URL, 比如: 
    
     ```bash
@@ -37,7 +37,7 @@ toc:
     
     url_gene="https://a.com"  # 生成配置的后端地址
     url_sub="https://b.com"   # 来自机场的订阅链接
-    url_tpl="https://raw.githubusercontent.com/senzyo/sing-box-templates/normal/tun/dot/8.8.8.8/ghproxy.net/config.json"  # 配置所用模板的地址
+    url_tpl="https://raw.githubusercontent.com/senzyo-desu/sing-box-templates/normal/tun/dot/8.8.8.8/ghproxy.net/config.json"  # 配置所用模板的地址
     url_dl="$url_gene/config/$url_sub&ua=clashmeta&emoji=1&file=$url_tpl"
     echo $url_dl
     # curl -L -o config.json "$url_dl"

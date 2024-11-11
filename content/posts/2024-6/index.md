@@ -16,7 +16,7 @@ https://github.com/netptop/siteproxy
 
 ## 部署
 
-1. 修改 `build/worker.js` [v2.3.1](https://ghproxy.net/https://raw.githubusercontent.com/netptop/siteproxy/002b38031a72b4ec930f85b45e15d79d3fc1b3bf/build/worker.js) 或 [备份](https://ghproxy.net/https://raw.githubusercontent.com/senzyo/as-gist/master/Website/SiteProxy/worker.js)。
+1. 修改 `build/worker.js` [v2.3.1](https://ghproxy.net/https://raw.githubusercontent.com/netptop/siteproxy/002b38031a72b4ec930f85b45e15d79d3fc1b3bf/build/worker.js) 或 [备份](https://ghproxy.net/https://raw.githubusercontent.com/senzyo-desu/as-gist/master/Website/SiteProxy/worker.js)。
 2. 替换 `http://localhost:5006` 为自定义域名 (需要 `https://`), 比如 `https://your-proxy-domain.name`。
 3. 替换 `user22334455` 为自己喜欢的密码, 为空时表示不需密码即可访问。
 4. 如果不喜欢默认的首页 `https://www.netptop.com/`, 可修改这段代码:

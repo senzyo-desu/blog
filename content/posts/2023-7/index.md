@@ -286,7 +286,7 @@ proxy-providers:
 rule-providers:
   downloader:
     type: http
-    url: 'https://ghp.ci/https://raw.githubusercontent.com/senzyo/as-gist/master/Rule/Clash/downloader.yaml'
+    url: 'https://ghp.ci/https://raw.githubusercontent.com/senzyo-desu/as-gist/master/Rule/Clash/downloader.yaml'
     path: ./rule-providers/downloader.yaml
     # 单位为秒
     interval: 86400

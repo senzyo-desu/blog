@@ -19,8 +19,8 @@ git remote set-url --add origin git@gitlab.com:senzyo_sama/blog.git
 使用 `git remote -v` 查看得到类似信息: 
 
 ```bash
-origin  git@github.com:senzyo/blog.git (fetch)
-origin  git@github.com:senzyo/blog.git (push)
+origin  git@github.com:senzyo-desu/blog.git (fetch)
+origin  git@github.com:senzyo-desu/blog.git (push)
 origin  git@gitlab.com:senzyo_sama/blog.git (push)
 ```
 
@@ -56,7 +56,7 @@ jobs:
         run: |
           git clone --branch master https://github.com/bclswl0827/ChatGemini.git
           cd ChatGemini
-          git remote set-url origin https://${{ secrets.PERSONAL_TOKEN }}@github.com/senzyo/ChatGemini.git
+          git remote set-url origin https://${{ secrets.PERSONAL_TOKEN }}@github.com/senzyo-desu/ChatGemini.git
           git push -uf origin master:master
 
   github-readme-stats:
@@ -67,7 +67,7 @@ jobs:
         run: |
           git clone --branch master https://github.com/anuraghazra/github-readme-stats.git
           cd github-readme-stats
-          git remote set-url origin https://${{ secrets.PERSONAL_TOKEN }}@github.com/senzyo/github-readme-stats.git
+          git remote set-url origin https://${{ secrets.PERSONAL_TOKEN }}@github.com/senzyo-desu/github-readme-stats.git
           git push -uf origin master:master
 ```
 
@@ -98,7 +98,7 @@ jobs:
     steps:
       - name: Sync as-gist
         run: |
-          git clone --branch master https://github.com/senzyo/as-gist.git
+          git clone --branch master https://github.com/senzyo-desu/as-gist.git
           cd as-gist
           git remote set-url origin https://oauth2:${{ secrets.GITLAB_PERSONAL_TOKEN }}@gitlab.com/senzyo_sama/as-gist.git
           git push -uf origin master:master
@@ -109,7 +109,7 @@ jobs:
     steps:
       - name: Sync blog
         run: |
-          git clone --branch master https://github.com/senzyo/blog.git
+          git clone --branch master https://github.com/senzyo-desu/blog.git
           cd blog
           git remote set-url origin https://oauth2:${{ secrets.GITLAB_PERSONAL_TOKEN }}@gitlab.com/senzyo_sama/blog.git
           git push -uf origin master:master

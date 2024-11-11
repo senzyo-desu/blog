@@ -134,7 +134,7 @@ keywords = ["senzyo"]
   Foursquare = ""
   FreeCodeCamp = ""
   Gitea = ""
-  GitHub = "senzyo"
+  GitHub = "senzyo-desu"
   Gitlab = "senzyo_sama"
   Goodreads = ""
   Googlescholar = ""
@@ -195,5 +195,5 @@ keywords = ["senzyo"]
 [sponsor]
   enable = false
   bio = "如果你觉得这篇文章对你有所帮助, 欢迎赞赏~"
-  link = "https://github.com/sponsors/senzyo"
+  link = "https://github.com/sponsors/senzyo-desu"
   custom = "<a href=\"https://www.buymeacoffee.com/senzyo\" target=\"_blank\"><img src=\"https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png\" alt=\"Buy Me A Coffee\" style=\"height: 40px !important;width: 145 !important;\" ></a>"

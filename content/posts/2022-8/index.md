@@ -119,7 +119,7 @@ fi
 4. 配置仓库: 
 
     ```bash
-    git remote add github git@github.com:senzyo/blog.git
+    git remote add github git@github.com:senzyo-desu/blog.git
     git remote add gitee git@gitee.com:senzyo/blog.git
     ```
     
@@ -128,8 +128,8 @@ fi
     ```bash
     gitee   git@gitee.com:senzyo/blog.git (fetch)
     gitee   git@gitee.com:senzyo/blog.git (push)
-    github  git@github.com:senzyo/blog.git (fetch)
-    github  git@github.com:senzyo/blog.git (push)
+    github  git@github.com:senzyo-desu/blog.git (fetch)
+    github  git@github.com:senzyo-desu/blog.git (push)
     origin  ssh://senzyo@localhost:[port]/home/senzyo/git-repos/blog/.git (fetch)
     origin  ssh://senzyo@localhost:[port]/home/senzyo/git-repos/blog/.git (push)
     ```
