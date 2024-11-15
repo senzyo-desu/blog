@@ -204,9 +204,10 @@ https://github.com/apkunpacker/MagiskDetection
 
 安装 LSPosed Modules 的前提是已经在 Magisk 或 KernelSU 中安装了 [Zygisk-LSPosed](https://github.com/LSPosed/LSPosed/releases/latest) 模块。
 
+- [fcmfix](https://github.com/kooritea/fcmfix), 强有力的 FCM 通知
+- [Hide My Applist](https://github.com/Dr-TSNG/Hide-My-Applist/releases/latest), 使一些应用对另一些应用隐藏, 比如隐藏 root 应用和 LSPosed 模块
 - [InstallerPlus](https://github.com/NextAlone/InstallerPlus/releases/latest), 在安装和卸载软件时提供更多信息
-- [灭霸](https://github.com/Tornaco/Thanox/releases/latest), 调教软件
-- [隐藏应用列表](https://github.com/Dr-TSNG/Hide-My-Applist/releases/latest), 使一些应用对另一些应用隐藏, 比如隐藏 root 应用和 LSPosed 模块
+- [Thanox](https://github.com/Tornaco/Thanox/releases/latest), 调教软件
 - [知了](https://github.com/shatyuka/Zhiliao/releases/latest), 精简知乎
 
 ## Check Info
