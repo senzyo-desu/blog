@@ -3,7 +3,7 @@ title: "GitHub Pages使用问题"
 date: 2022-03-04T20:00:00+08:00
 draft: false
 authors: ["SenZyo"]
-tags: [GitHub_Pages,Help]
+tags: [GitHub,Help]
 featuredImagePreview: ""
 summary: 记录在使用 GitHub Pages 时遇到的问题, 比如自定义域名设置失败。
 ---

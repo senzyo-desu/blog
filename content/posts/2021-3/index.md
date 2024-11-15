@@ -3,7 +3,7 @@ title: "GitHub Actions部署Hugo站点"
 date: 2021-03-13T20:00:00+08:00
 draft: false
 authors: ["SenZyo"]
-tags: [GitHub_Actions,Hugo]
+tags: [GitHub,Hugo]
 featuredImagePreview: "/2021-3/featuredImagePreview.svg"
 summary: GitHub Actions 双分支或双仓库模式部署 Hugo 站点。
 ---

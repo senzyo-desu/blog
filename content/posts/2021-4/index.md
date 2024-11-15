@@ -3,7 +3,7 @@ title: "GitHub Repository Sync"
 date: 2021-03-14T20:00:00+08:00
 draft: false
 authors: ["SenZyo"]
-tags: [Git,GitHub_Actions]
+tags: [Git,GitHub]
 featuredImagePreview: ""
 summary: 一个本地 Git 仓库使用多个 Remote 地址。使用 GitHub Actions 从上游同步已经 Fork 的仓库; 推送 GitHub 仓库到 GitLab。
 ---

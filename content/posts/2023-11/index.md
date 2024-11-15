@@ -3,7 +3,7 @@ title: "自动更新Algolia索引"
 date: 2023-12-18T09:00:00+08:00
 draft: false
 authors: ["SenZyo"]
-tags: [GitHub_Actions]
+tags: [GitHub]
 featuredImagePreview: ""
 summary: 通过 GitHub Actions 自动更新 Algolia 的索引。
 toc:
