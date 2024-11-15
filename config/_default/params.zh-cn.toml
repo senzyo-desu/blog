@@ -28,7 +28,7 @@ keywords = ["senzyo"]
   enable = true
   # type of search engine ("algolia", "fuse", "pagefind")
   # 搜索引擎的类型 ("algolia", "fuse", "pagefind")
-  type = "pagefind"
+  type = "algolia"
   # max index length of the chunked content
   # 文章内容最长索引长度
   contentLength = 4000
@@ -48,7 +48,7 @@ keywords = ["senzyo"]
   # 是否在搜索索引中使用基于 baseURL 的绝对路径
   absoluteURL = false
   [search.algolia]
-    index = "crawler_Github-senzyo-blog-refs-heads-master_index"
+    index = "index"
     appID = "NBORTY71N5"
     searchKey = "78087bb119a36ec2ed8a7d522d81a092"
   [search.fuse]

@@ -82,3 +82,7 @@ Push 项目到 GitHub 后, 如果 Action 成功运行, 应该可以看到 Algoli
 
 然后再调整 **Search** → **Index** → **Configuration**。
 {{< /admonition >}}
+
+{{< admonition type=warning title="Algolia Crawler 也许并不合适🤔" open=true >}}
+我会遇到 `Records extracted are too big` 的错误, 也许可以优化后避免, 但我懒, 反正这博客很少更新, 我不如直接手动上传 `index.json` 到 Algolia Search 的控制台😄
+{{< /admonition >}}

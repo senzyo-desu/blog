@@ -13,7 +13,7 @@ toc:
 {{< admonition type=warning title="账号迁移" open=true >}}
 GitHub 原账号 [senzyo](https://github.com/senzyo) 被标记为 `spam`, 所以改用 GitHub 新账号 [senzyo-desu](https://github.com/senzyo-desu) 和 GitLab 账号 [senzyo_sama](https://gitlab.com/senzyo_sama)。
 
-`senzyo` 相关的 GitHub 链接，请替换为 `senzyo-desu` 相关。
+`senzyo` 相关的 GitHub 链接, 请替换为 `senzyo-desu` 相关。
 {{< /admonition >}}
 
 大约两周前, 由于想尝试 sing-box [v1.10.0](https://sing-box.sagernet.org/zh/changelog/#1100) 支持 AdGuard DNS 过滤的新特性, 于是把 [AdguardTeam/AdguardFilters](https://github.com/AdguardTeam/AdguardFilters) 仓库中的规则通过 GitHub Actions 转换为 srs 格式, 没想到账号立刻就被 GitHub 官方标记为 spam 了。
